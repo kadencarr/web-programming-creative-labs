@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="main.css" rel="stylesheet" title="text/css">
+    <title>Rewrite the Stars</title>
+    <script>
+        
+        // Global Modal
+        var modal;
+
+        // When the user clicks a Constellation, open the modal 
+        function goModal(clicked_id) {
+            modal = document.getElementById(clicked_id + "Window");
+            modal.style.display = "block";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Rewrite the Stars</h1>
+    <p class="gameExplanantion">
+         "For my part I know nothing with certainty, but the sight of the stars makes me dream" - Vincent Van Gogh<br><br>
+         Welcome to the website of dreamers where you can admire the stars anytime. Whether it's a casual night in during a 
+         storm or the perfect night out with your special someone, this is your chance to get educated on constellations! 
+         To learn more about the different constellations, click on the pictures.
+    </p>
+    
+    <!-- Collection of constellations -->
+    <div id="constellation_Collection">
+    
+        <div class="constellation_Container" id="Monoceros" onClick="goModal(this.id)">
+        <img src="Constellations/menu-monoceros.jpg" alt="A picture of a Constellation"/>
+        <p>Monoceros</p>
+        </div>
+        
+        <div class="modal" id="MonocerosWindow">
+            <div class="modal-content">
+                <img class="modal-image" src="Constellations/menu-monoceros.jpg" alt="A picture of a Constellation"/>
+                <h2>Monoceros</h2>
+                <p>Pronunciation:  (moh-NOS-er-us)</p>
+                <p>Abbreviation:  Mon   Genitive:  Monocerotis</p>
+                <p>Right Ascension:  7 hours   Declination:  -5 degrees</p>
+                <p>Area in Square Degrees:  482</p>
+                <p>Crosses Meridian:  9 PM, February 20</p>
+                <p>Visible Between Latitudes:  75 and -85 degrees</p>
+            </div>
+        </div>
+        
+        <div class="constellation_Container" id="Lepus" onClick="goModal(this.id)">
+        <img src="Constellations/menu-lepus.jpg" alt="A picture of a Constellation"/>
+        <p>Lepus</p>
+        </div>
+        
+        <div class="modal" id="LepusWindow">
+            <div class="modal-content">
+                <img class="modal-image" src="Constellations/menu-lepus.jpg" alt="A picture of a Constellation"/>
+                <h2>Lepus</h2>
+                <p>Pronunciation:  (LEE-pus)</p>
+                <p>Abbreviation:  Lep   Genitive:  Leporus</p>
+                <p>Right Ascension:  6 hours   Declination:  -20 degrees</p>
+                <p>Area in Square Degrees:  290</p>
+                <p>Crosses Meridian:  9 PM, January 25</p>
+                <p>Visible Between Latitudes:  60 and -90 degrees</p>
+            </div>
+        </div>
+        
+        <div class="constellation_Container" id="CanesVenatici" onClick="goModal(this.id)">
+        <img src="Constellations/menu-canes-venatici.jpg" alt="A picture of a Constellation"/>
+        <p>Canes Venatici</p>
+        </div>
+        
+        <div class="modal" id="CanesVenaticiWindow">
+            <div class="modal-content">
+                <img class="modal-image" src="Constellations/menu-canes-venatici.jpg" alt="A picture of a Constellation"/>
+                <h2>Canes Venatici</h2>
+                <p>Pronunciation:  (KAY-neez vee-NAT-uh-sigh)</p>
+                <p>Abbreviation:  CVn   Genitive:  Canum Venaticorum</p>
+                <p>Right Ascension:  13 hours   Declination:  40 degrees</p>
+                <p>Area in Square Degrees:  456</p>
+                <p>Crosses Meridian:  9 PM, May 20</p>
+                <p>Visible Between Latitudes:  90 and -40 degrees</p>
+            </div>
+        </div>
+        
+        <div class="constellation_Container" id="Corvus" onClick="goModal(this.id)">
+        <img src="Constellations/menu-corvus.jpg" alt="A picture of a Constellation"/>
+        <p>Corvus</p>
+        </div>
+        
+        <div class="modal" id="CorvusWindow">
+            <div class="modal-content">
+                <img class="modal-image" src="Constellations/menu-corvus.jpg" alt="A picture of a Constellation"/>
+                <h2>Corvus</h2>
+                <p>Pronunciation:   (KOR-vus)</p>
+                <p>Abbreviation:  Crv   Genitive:  Corvi</p>
+                <p>Right Ascension:  12 hours   Declination:  -20 degrees</p>
+                <p>Area in Square Degrees:  184</p>
+                <p>Crosses Meridian:  9 PM, May 10</p>
+                <p>Visible Between Latitudes:  60 and -90 degrees</p>
+            </div>
+        </div>
+        
+        <div class="constellation_Container" id="Gemni" onClick="goModal(this.id)">
+        <img src="Constellations/menu-gemini.jpg" alt="A picture of a Constellation"/>
+        <p>Gemni</p>
+        </div>
+        
+        <div class="modal" id="GemniWindow">
+            <div class="modal-content">
+                <img class="modal-image" src="Constellations/menu-gemini.jpg" alt="A picture of a Constellation"/>
+                <h2>Gemni</h2>
+                <p>Pronunciation:  (Jem-i-ny)</p>
+                <p>Abbreviation:  Gem   Genitive:  Geminorum</p>
+                <p>Right Ascension:  7 hours   Declination:  20 degrees</p>
+                <p>Area in Square Degrees:  514</p>
+                <p>Crosses Meridian:  9 PM, February 20</p>
+                <p>Visible Between Latitudes:  90 and -60 degrees</p>
+            </div>
+        </div>
+        
+        <div class="constellation_Container" id="Columba" onClick="goModal(this.id)">
+        <img src="Constellations/menu-columba.jpg" alt="A picture of a Constellation"/>
+        <p>Columba</p>
+        </div>
+        
+        <div class="modal" id="ColumbaWindow">
+            <div class="modal-content">
+                <img class="modal-image" src="Constellations/menu-columba.jpg" alt="A picture of a Constellation"/>
+                <h2>Columba</h2>
+                <p>Pronunciation:  (koh-LUM-buh)</p>
+                <p>Abbreviation:  Col   Genitive:  Columbae</p>
+                <p>Right Ascension:  6 hours   Declination:  -35 degrees</p>
+                <p>Area in Square Degrees:  270</p>
+                <p>Crosses Meridian:  9 PM, January 30</p>
+                <p>Visible Between Latitudes:  45 and -90 degrees</p>
+            </div>
+        </div>
+        
+        <div class="constellation_Container" id="CanisMajor" onClick="goModal(this.id)">
+        <img src="Constellations/menu-canis-major.jpg" alt="A picture of a Constellation"/>
+        <p>Canis Major</p>
+        </div>
+        
+        <div class="modal" id="CanisMajorWindow">
+            <div class="modal-content">
+                <img class="modal-image" src="Constellations/menu-canis-major.jpg" alt="A picture of a Constellation"/>
+                <h2>Canis Major</h2>
+                <p>Pronunciation:  (KAY-nis MAY-jur)</p>
+                <p>Abbreviation:  CMa   Genitive:  Canis Majoris</p>
+                <p>Right Ascension:  7 hours   Declination:  -20 degrees</p>
+                <p>Area in Square Degrees:  380</p>
+                <p>Crosses Meridian:  9 PM, February 15</p>
+                <p>Visible Between Latitudes:  60 and -90 degrees</p>
+            </div>
+        </div>
+        
+        <div class="constellation_Container" id="Camelopardalis" onClick="goModal(this.id)">
+        <img src="Constellations/menu-camelopardalis.jpg" alt="A picture of a Constellation"/>
+        <p>Camelopardalis</p>
+        </div>
+        
+        <div class="modal" id="CamelopardalisWindow">
+            <div class="modal-content">
+                <img class="modal-image" src="Constellations/menu-camelopardalis.jpg" alt="A picture of a Constellation"/>
+                <h2>Camelopardalis</h2>
+                <p>Pronunciation:  (ka-MEL-oh-POR-duh-lis)</p>
+                <p>Abbreviation:  Cam   Genitive:  Camelopardalis</p>
+                <p>Right Ascension:  6 hours   Declination:  70 degrees</p>
+                <p>Area in Square Degrees:  757</p>
+                <p>Crosses Meridian:  9 PM, February 1</p>
+                <p>Visible Between Latitudes:  90 and -10 degrees</p>
+            </div>
+        </div>
+        
+        <div class="constellation_Container" id="Virgo" onClick="goModal(this.id)">
+        <img src="Constellations/menu-virgo.jpg" alt="A picture of a Constellation"/>
+        <p>Virgo</p>
+        </div>
+        
+        <div class="modal" id="VirgoWindow">
+            <div class="modal-content">
+                <img class="modal-image" src="Constellations/menu-virgo.jpg" alt="A picture of a Constellation"/>
+                <h2>Virgo</h2>
+                <p>Pronunciation:  (VER-goh) </p>
+                <p>Abbreviation:  Vir   Genitive:  Virginis</p>
+                <p>Right Ascension:  13 hours   Declination:  0 degrees</p>
+                <p>Area in Square Degrees:  1294</p>
+                <p>Crosses Meridian:  9 PM, May 25</p>
+                <p>Visible Between Latitudes:  80 and -80 degrees</p>
+            </div>
+        </div>
+        
+        <div class="constellation_Container" id="Auriga" onClick="goModal(this.id)">
+        <img src="Constellations/menu-auriga.jpg" alt="A picture of a Constellation"/>
+        <p>Auriga</p>
+        </div>
+        
+        <div class="modal" id="AurigaWindow">
+            <div class="modal-content">
+                <img class="modal-image" src="Constellations/menu-auriga.jpg" alt="A picture of a Constellation"/>
+                <h2>Auriga</h2>
+                <p>Pronunciation:  (ah-RY-guh) </p>
+                <p>Abbreviation:  Aur   Genitive:  Aurigae</p>
+                <p>Right Ascension:  6 hours   Declination:  40 degrees</p>
+                <p>Area in Square Degrees:  657</p>
+                <p>Crosses Meridian:  9 PM, January 10</p>
+                <p>Visible Between Latitudes:  90 and -40 degrees</p>
+            </div>
+        </div>
+        
+        <div class="constellation_Container" id="Pictor" onClick="goModal(this.id)">
+        <img src="Constellations/menu-pictor.jpg" alt="A picture of a Constellation"/>
+        <p>Pictor</p>
+        </div>
+        
+        <div class="modal" id="PictorWindow">
+            <div class="modal-content">
+                <img class="modal-image" src="Constellations/menu-pictor.jpg" alt="A picture of a Constellation"/>
+                <h2>Pictor</h2>
+                <p>Pronunciation:  (PIK-ter) </p>
+                <p>Abbreviation:  Pic   Genitive:  Pictoris</p>
+                <p>Right Ascension:  6 hours   Declination:  -55 degrees</p>
+                <p>Area in Square Degrees:  247</p>
+                <p>Crosses Meridian:  9 PM, January 20</p>
+                <p>Visible Between Latitudes:  25 and -90 degrees</p>
+            </div>
+        </div>
+        
+        <div class="constellation_Container" id="Centaurus" onClick="goModal(this.id)">
+        <img src="Constellations/menu-centaurus.jpg" alt="A picture of a Constellation"/>
+        <p>Centaurus</p>
+        </div>
+        
+        <div class="modal" id="CentaurusWindow">
+            <div class="modal-content">
+                <img class="modal-image" src="Constellations/menu-centaurus.jpg" alt="A picture of a Constellation"/>
+                <h2>Centaurus</h2>
+                <p>Pronunciation:  (sen-TAHR-us)</p>
+                <p>Abbreviation:  Cen   Genitive:  Centauri</p>
+                <p>Right Ascension:  13 hours   Declination:  -50 degrees</p>
+                <p>Area in Square Degrees:  1060</p>
+                <p>Crosses Meridian:  9 PM, May 20</p>
+                <p>Visible Between Latitudes:  30 and -90 degrees</p>
+            </div>
+        </div>
+    
+    </div>
+    <!-- Buttons for the Game -->
+    
+    <p class="gameExplanantion">
+            Have you ever wanted to make your own constellation? Well, now is your chance! 
+            In the picture below, click on any of the stars to draw the constellation of your dreams. 
+            After you are finished drawing, please name your constellation and enjoy! 
+            If you want to start over again, click the clear button.
+    </p>
+    
+    <div id="buttons">
+        <form onsubmit="nameConstellation(event)">
+            <input type="text" id="namingSpace">
+            <input type="submit" value="Name my Constellation" id="submitButton">
+            <audio id="audio" src="musicCut.m4a"></audio>
+        </form>
+        <script>
+                function nameConstellation(event) {
+                    event.preventDefault();
+                    document.getElementById("nameSlot").innerHTML = document.getElementById("namingSpace").value;
+                    play();
+                };
+                function play() {
+                    var audio = document.getElementById("audio");
+                    audio.play();
+                }
+        </script>
+        <button onClick="clearGame()" id="clearButton">Clear</button>
+        <script>
+            function clearGame() {
+                var canvas =  document.getElementById('myCanvas');
+                canvas.getContext('2d').clearRect(0,0,canvas.width, canvas.height);
+                canvas.getContext('2d').beginPath();
+                document.getElementById("namingSpace").value = "";
+                document.getElementById("nameSlot").innerHTML = null;
+                audioStop();
+            }
+            function audioStop() {
+                var audio = document.getElementById("audio");
+                audio.pause();
+            }
+        </script>
+    </div>
+    
+
+        
+    <!-- Gameplay Area -->
+    
+    <p id="nameSlot"></p>
+    <div id="addLineSpace">
+        <div id="placeConstellationName"></div>
+        <canvas id="myCanvas"></canvas>
+    </div>
+    
+    <div id="photoCredits">
+        <p>Starscape taken in Provo Canyon, February 2017</p>
+        <p>Photo Credits: @kellcarr_photo on instagram</p>
+    </div>
+    
+    <script>
+            var canvas = document.getElementById('myCanvas');
+            var context = canvas.getContext('2d');
+            context.canvas.width = window.innerWidth;
+            context.canvas.height = window.innerHeight;
+
+            var start = function(coors) {
+                context.beginPath();
+                context.moveTo(coors.x, coors.y);
+            };
+            
+            
+            var next = function(coors) {
+                context.strokeStyle = "white";
+                context.lineTo(coors.x, coors.y);
+                context.stroke();
+            }; 
+            
+            
+            var draw = function(event) {
+                var rect = canvas.getBoundingClientRect();
+                var coors = {
+                    x: (event.clientX - rect.left) / (rect.right - rect.left) * canvas.width,
+                    y: (event.clientY - rect.top) / (rect.bottom - rect.top) * canvas.height
+                };
+                mousedown: next(coors);
+            }
+            
+            canvas.addEventListener('mousedown', draw, false);
+        </script>
+   
+   
+       
+
+    
+</body>
+</html>

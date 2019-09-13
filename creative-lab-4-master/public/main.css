@@ -1,0 +1,141 @@
+/*
+COLOR PALETTE
+dark blue:          #053387
+cornflower blue:    #449FE7
+medium turquoise:   #59CDC5
+tan:                #CBD078
+slate gray:         #1F1820
+*/
+
+.centered-text {
+    text-align: center;
+}
+
+#bottom-box {
+    text-align: center;
+    font-size: .8em;
+    background-color: #427975;
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#canvas {
+    width: 640px;
+    height: 380px;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: white;
+}
+
+#drawing-box {
+    background-color: #1F1820;
+}
+
+#guessing-box {
+    background-color: #1F1820;
+}
+
+#guessing-form-box {
+    background-color: #72B37E;
+}
+
+#guess-form {
+    margin: 15px;
+}
+
+#guess-list {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 80%;
+    padding: 5px;
+    background-color: #1F1820;
+    color: #CBD078;
+}
+
+#guess-title {
+    text-align: center;
+    background-color: #72B37E;
+}
+
+#right-column {
+    background-color: #427975;
+    color: white;
+}
+
+#title-box {
+    background-color: #427975;
+    color: white;
+}
+
+#welcome-box {
+    padding: 3px;
+    background-color: #72B37E;
+    color: white;
+}
+
+
+#controls
+{
+    min-height: 60px;
+	margin: 0 auto;
+	width: 600px;
+	border-radius: 5px;
+	overflow: hidden;
+}
+ul {
+	list-style:none;
+	margin: 0;
+	float: 	left;
+	padding: 10px 0 20px;
+	width: 100%;
+	text-align: center;
+}
+
+ul li {
+	display:block;
+	height: 54px;
+	width: 54px;
+	border-radius: 60px;
+	cursor: pointer;
+	border: 0;
+}
+
+ul li {
+	display: inline-block;
+	margin: 0 5px 10px;
+}
+
+.red {
+	background-color: #FF0000;
+}
+
+.blue {
+	background-color: #0000ff;
+}
+
+.yellow {
+	background-color: #FFFF00;
+}
+
+/*Update this to identify which color is being used*/
+.selected {
+	border: 7px solid black;
+	width: 54px;
+	height: 54px;
+}
+
+.col-md-9 {
+    background-color: #1F1820;
+}
+
+#gameplay-area {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+body {
+    background-color: #555B77;
+}

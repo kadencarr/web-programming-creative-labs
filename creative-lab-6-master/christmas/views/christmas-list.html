@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Christmas List</title>
+
+    <!-- Bootstrap stylesheet -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Google font: Alex Brush -->
+    <link href='https://fonts.googleapis.com/css?family=Alex Brush' rel='stylesheet'>
+
+    <!-- Bootstrap and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <!-- Angular first, then AngularUI Router -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
+
+    <!-- my Javascript -->
+    <script src="/javascripts/christmas.js"></script>
+
+    <!-- my CSS -->
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+</head>
+
+<body ng-app='app' ng-controller='mainCtrl'>
+    <navbar></navbar>
+    <div id="christmas-list" class="col-5 offset-3 fancy">
+        <div id="top-row" class="row">
+            <div class="col-6">
+                <br>
+                <h1>Dear Santa,</h1>
+                <h2>Here is my wishlist:</h2>
+            </div>
+            <div class="col-6">
+                <img src="/images/santa-and-buddies.png">
+            </div>
+        </div>
+
+        <ol>
+            <li ng-repeat="item in wishlist">
+                {{item.Item}}
+                <hr>
+            </li>
+        </ol>
+        <div id="bottom-row" class="row">
+            <div class="col-5">
+                <h1>Love,</h1>
+                <h2>
+                    <%= username %>
+                </h2>
+            </div>
+            <div class="col-7">
+                <img src="/images/christmas-presents.png">
+            </div>
+        </div>
+
+    </div>
+    <audio loop="loop" autoplay="autoplay" id="background-music">  
+       <source src="/../christmas.mp3" />  
+    </audio>
+    
+</body>
+
+</html>

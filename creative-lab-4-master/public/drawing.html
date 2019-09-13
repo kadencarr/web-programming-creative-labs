@@ -1,0 +1,176 @@
+<html>
+
+<head>
+    <title>Pictionary</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!--<script src="app.js" type="text/javascript" charset="utf-8"></script>-->
+</head>
+
+<body>
+    <div id="drawingArea">
+        <canvas width="600" height="400"></canvas>
+    </div>
+
+    <div class="controls">
+        <ul id="colorPicker">
+            <li class="red selected"></li>
+            <li class="blue"></li>
+            <li class="yellow"></li>
+        </ul>
+        <button type="button" id="clearButton">Clear canvas</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        var color = $(".selected").css("background-color");
+
+        var $canvas = $("canvas");
+
+        var context = $canvas[0].getContext("2d");
+        var lastEvent;
+        var mouseDown = false;
+
+        
+        
+        //update the colors
+        $(".controls").on("click", "li", function() {
+            //deselect sibling elements
+            $(this).siblings().removeClass("selected");
+            //select clicked element
+            $(this).addClass("selected");
+            //cache current color here
+            color = $(".selected").css("background-color");
+            console.log("selected color = " + color);
+        });
+        
+        $("button").click(function(){
+            context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+        })
+
+        $canvas.mousedown(function(e) {
+            lastEvent = e;
+            mouseDown = true;
+
+        }).mousemove(function(e) {
+            if (mouseDown) {
+                //Draw lines
+                context.beginPath();
+                context.moveTo(lastEvent.offsetX, lastEvent.offsetY);
+                context.lineTo(e.offsetX, e.offsetY);
+                context.strokeStyle = color;
+                context.stroke();
+                lastEvent = e;
+            }
+        }).mouseup(function() {
+            mouseDown = false;
+        }).mouseleave(function() {
+            $canvas.mouseup();
+        });
+
+        /*var canvas = document.getElementById('myCanvas');
+        var context = canvas.getContext('2d');
+        var rect = canvas.getBoundingClientRect();
+        //context.canvas.width = window.innerWidth;
+        //context.canvas.height = window.innerHeight;
+        
+        
+        var clickX = new Array();
+        var clickY = new Array();
+        var clickDrag = new Array();
+        var draw;
+
+        function addClick(x, y, dragging) {
+            clickX.push(x);
+            clickY.push(y);
+            clickDrag.push(dragging);
+        }
+
+        $('#myCanvas').mousedown(function(e) {
+            var mouseX = (event.clientX - rect.left) / (rect.right - rect.left); //* canvas.width;
+            var mouseY = (event.clientY - rect.top) / (rect.bottom - rect.top); // canvas.height;
+            var mouseX = e.pageX - this.offsetLeft;
+            var mouseY = e.pageY - this.offsetTop;
+            console.log(mouseX + " " + mouseY);
+            draw = true;
+            addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop);
+            redraw();
+        });
+
+        //record when the mouse moves 
+        $('#canvas').mousemove(function(e) {
+            if (draw) {
+                addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true);
+                redraw();
+            }
+        });
+
+        //if mouse leaves canvas, ignore
+        $('#canvas').mouseleave(function(e) {
+            draw = false;
+        });
+
+
+        //on mouseup stop painting
+        $('#canvas').mouseup(function(e) {
+            draw = false;
+        });
+
+
+
+        function redraw() {
+
+            context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+            context.strokeStyle = "red";
+            context.lineJoin = "round";
+            context.lineWidth = 5;
+
+            for (var i = 0; i < clickX.length; i++) {
+                context.beginPath();
+                if (clickDrag[i] && i) {
+                    context.moveTo(clickX[i - 1], clickY[i - 1]);
+                }
+                else {
+                    context.moveTo(clickX[i] - 1, clickY[i]);
+                }
+                context.lineTo(clickX[i], clickY[i]);
+                context.closePath();
+                context.stroke();
+            }
+        }*/
+
+        /* script from stars canvas
+        var canvas = document.getElementById('myCanvas');
+        var context = canvas.getContext('2d');
+        context.canvas.width = window.innerWidth;
+        context.canvas.height = window.innerHeight;
+
+        var start = function(coors) {
+            context.beginPath();
+            context.moveTo(coors.x, coors.y);
+        };
+
+
+        var next = function(coors) {
+            context.strokeStyle = "white";
+            context.lineTo(coors.x, coors.y);
+            context.stroke();
+        };
+
+
+        var draw = function(event) {
+            var rect = canvas.getBoundingClientRect();
+            var coors = {
+                x: (event.clientX - rect.left) / (rect.right - rect.left) * canvas.width,
+                y: (event.clientY - rect.top) / (rect.bottom - rect.top) * canvas.height
+            };
+            mousedown: next(coors);
+        }
+
+        canvas.addEventListener('mousedown', draw, false); */
+    </script>
+</body>
+
+</html>

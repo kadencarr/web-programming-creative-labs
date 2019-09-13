@@ -1,0 +1,38 @@
+.fancy {
+    font-family: 'Alex Brush';
+    font-size: 22px;
+}
+
+#bottom-row {
+    margin-bottom: 8px;
+}
+
+#christmas-list {
+    padding-left: 20px;
+    border: solid red 4px;
+    border-radius: 15px;
+    margin-top: 75px;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+#christmas-list ol {
+    font-size: 30px;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    /*left: 0;*/
+    width: 100%;
+    z-index: 9999;
+}
+
+#top-row {
+    margin-top: 2px;
+}
+
+body{
+    background-image: url("/../images/snow.gif");
+    background-size: cover;
+}

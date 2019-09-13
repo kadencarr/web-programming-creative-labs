@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Date Planner</title>
+    <link href="main.css" rel="stylesheet" title="text/css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="lab2.js"></script>
+    <meta name="viewport" content="intiial-scale=1.0">
+    <meta charset="utf-8">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJXxhypi17FsH8crox39bHen3oyQ8QM4E&callback=initMap" async defer></script>
+</head>
+
+<body>
+    <div id="title-div">
+        Date Planner
+    </div>
+    <div id="photoCredits">
+        Brigham Young University's "Art after Dark" at the MOA. <a href="https://www.instagram.com/kellcarr_photo/">@kellcarr_photo</a> on instagram
+    </div>
+    <div id="date-selection-area">
+        <div id="welcome">
+            Welcome! Please pick what kind of date you wish to plan:
+        </div>
+        <div id="options">
+            <ul id="options-list">
+                <li id="romanticButton" class="list-item">Romantic</li>
+                <li id="casualButton" class="list-item">Casual</li>
+                <li id="firstButton" class="list-item">First Date</li>
+                <li id="adventurousButton" class="list-item">Adventurous</li>
+                <li id="groupButton" class="list-item">Group</li>
+            </ul>
+        </div>
+    </div>
+    <div class="date-space">
+        <div class="foursquare-display" id="area0">
+        </div>
+        <div class="google-maps-display" id="map0">
+
+        </div>
+    </div>
+    <div class="date-space">
+        <div class="google-maps-display" id="map1">
+
+        </div>
+        <div class="foursquare-display" id="area1">
+        </div>
+    </div>
+    <div class="date-space">
+        <div class="foursquare-display" id="area2">
+        </div>
+        <div class="google-maps-display" id="map2">
+        </div>
+    </div>
+    <div id="plotted-date">
+        <div class="google-map-plotted" id="map3">
+
+        </div>
+    </div>
+
+    <div id="API-credit">
+        Powered by Foursquare, Google Maps and OpenWeather
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script>
+        // Global Modal
+        var modal;
+
+        // When the user clicks a Constellation, open the modal 
+        function goModal(clicked_id) {
+            modal = document.getElementById("Window");
+            modal.style.display = "block";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <a href='http://18.191.179.203/creative-lab-3/'>
+        <div id="header">
+            Start the test again!
+        </div>
+    </a>
+
+    <div class="question" ng-app="myApp" ng-controller="myCtrl" id="colorSpace">
+        <div id="contentArea">
+            <div id="questionArea">{{question}}</div>
+            <div id="buttonArea">
+                <button ng-click="changeContentQuestionS()" id="optionButton1">{{option1}}</button>
+                <button ng-click="changeContentQuestionF()" id="optionButton2">{{option2}}</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="Window">
+        <div class="modal-content" id="pictureArea"></div>
+    </div>
+
+</body>
+
+</html>

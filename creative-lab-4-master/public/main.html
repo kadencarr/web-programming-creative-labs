@@ -1,0 +1,131 @@
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="main.css">
+
+    <!-- jQuery Script -->
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <!-- Angular first, then AngularUI Router -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
+
+    <!-- My Script -->
+    <script src="main.js"></script>
+    <script type="text/javascript" src="sketch.js"></script>
+
+    <!-- Socket IO -->
+    <script type="text/javascript" src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+
+    <!-- p5 canvas -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.dom.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.sound.js"></script>
+
+    <title>Pictionary</title>
+</head>
+
+<body>
+    <div ng-app='app' ng-controller='mainCtrl' id="gameplay-area">
+        <!-- Page Title -->
+        <div class="row">
+            <div id="title-box" class="col-md-12 borderx borderx-primary centered-text">
+                <h1>Pictionary App</h1>
+            </div>
+        </div>
+
+        <!--Middle Block-->
+        <div class="row">
+            <!--Left Section-->
+            <div class="col-md-9 borderx borderx-primary">
+                <!--Welcome Bar-->
+                <div class="row">
+                    <div id="welcome-box" class="col-md-12 borderx borderx-primary centered-text">
+
+                        <!--<div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic">-->
+                        <!--    <label ngbButtonLabel class="btn btn-primary">-->
+                        <!--        <input ngbButton type="radio" value="drawer" ng-model="role"> Drawer-->
+                        <!--    </label>-->
+                        <!--    <label ngbButtonLabel class="btn btn-primary">-->
+                        <!--        <input ngbButton type="radio" value="guesser" ng-model="role"> Guesser-->
+                        <!--    </label>-->
+                        <!--</div>-->
+                        <div ng-switch="role">
+                            <h3 ng-switch-when="guesser">
+                                Welcome, <strong>{{currentUsername}}</strong>! You are guessing...</username>
+                            </h3>
+                            <div ng-switch-when="drawer">
+                                <h3>Welcome, <strong>{{currentUsername}}</strong>! You are drawing!</username></h3>
+                                <h4>The word is <strong>{{currentWord}}</strong></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Drawing Box-->
+                <div class="row">
+                    <div id="drawing-box" class="col-md-12 borderx borderx-primary">
+                        <!--Actual Canvas-->
+                        <div id="canvas" class="borderx borderx-primary"></div>
+                    </div>
+                </div>
+                <!--Guessing Box-->
+                <div id="guessing-box" class="row" ng-switch="role">
+                    <!--Guessing Form Outline-->
+                    <!--ng-switch guesser-->
+                    <div id="guessing-form-box" class="col-md-6 offset-3 borderx borderx-primary" ng-switch-when="guesser">
+                        <form id="guess-form" ng-submit="addGuess()">
+                            <div class="form-group row">
+                                <div class="col-sm-10">
+                                    <input type="text" ng-model="guessText" class="form-control" id="guess-input" placeholder="What are they drawing?">
+                                </div>
+                                <input type="submit" id="guess-button" class="btn btn-primary col-sm2" value="Guess" />
+                                
+                            </div>
+                        </form>
+                    </div>
+                    <!--Color Picker-->
+                    <!--ng-switch drawer-->
+                    <div id="color-box" class="col-md-6 offset-3 borderx borderx-primary" ng-switch-when="drawer">
+                        <div class="controls">
+                            <div id="colorPicker">
+                                <!--color buttons are dynamically created here-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Right Section-->
+            <div id="right-column" class="col-md-3 borderx borderx-primary">
+                <div id="guess-title" class="borderx borderx-primary">
+                    <h4>Guesses</h4>
+                </div>
+                <div id="guess-list" class="borderx borderx-primary">
+                    <div ng-repeat="x in guesses">
+                        <strong>{{x.username}}</strong> {{x.guess}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Bottom Row-->
+    <div class="row">
+        <div id="bottom-box" class="col-md-12 borderx borderx-primary">Made by Benjamin Carr, Kaden Carr, and Morgan Hokanson</div>
+    </div>
+    </div>
+
+
+
+</body>
+
+</html>
